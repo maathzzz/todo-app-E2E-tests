@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-require("dotenv").config({path: "./.env"});
+require("dotenv").config({path: "./.env.local"});
 
 const TEST_USER = process.env.NEXT_PUBLIC_TEST_USER;
 const TEST_PASSWORD = process.env.NEXT_PUBLIC_TEST_PASSWORD;
