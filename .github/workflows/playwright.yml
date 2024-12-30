@@ -19,7 +19,7 @@ jobs:
       env:
         NEXT_PUBLIC_TEST_USER: ${{ secrets.NEXT_PUBLIC_TEST_USER }}
         NEXT_PUBLIC_TEST_PASSWORD: ${{ secrets.NEXT_PUBLIC_TEST_PASSWORD }}
-        NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+        APP_URL: ${{ secrets.APP_URL }}
       run: |
         echo "NEXT_PUBLIC_TEST_USER=${NEXT_PUBLIC_TEST_USER}" >> $GITHUB_ENV
         echo "NEXT_PUBLIC_TEST_PASSWORD=${NEXT_PUBLIC_TEST_PASSWORD}" >> $GITHUB_ENV
