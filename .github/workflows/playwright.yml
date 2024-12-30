@@ -23,7 +23,7 @@ jobs:
       run: |
         echo "NEXT_PUBLIC_TEST_USER=${NEXT_PUBLIC_TEST_USER}" >> $GITHUB_ENV
         echo "NEXT_PUBLIC_TEST_PASSWORD=${NEXT_PUBLIC_TEST_PASSWORD}" >> $GITHUB_ENV
-        echo "NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}" >> $GITHUB_ENV
+        echo "APP_URL=${APP_URL}" >> $GITHUB_ENV
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
