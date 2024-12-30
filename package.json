@@ -71,6 +71,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.49.1",
+    "dotenv": "^16.4.7",
     "supabase": "^2.1.1"
   }
 }
