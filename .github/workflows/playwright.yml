@@ -17,13 +17,13 @@ jobs:
       run: npm ci
     - name: Set environment variables
       env:
-        NEXT_PUBLIC_TEST_USER: ${{ secrets.NEXT_PUBLIC_TEST_USER }}
-        NEXT_PUBLIC_TEST_PASSWORD: ${{ secrets.NEXT_PUBLIC_TEST_PASSWORD }}
-        APP_URL: ${{ secrets.APP_URL }}
+        TEST_USER: ${{ secrets.TEST_USER }}
+        TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+        TEST_URL: ${{ secrets.TEST_URL }}
       run: |
-        echo "NEXT_PUBLIC_TEST_USER=${NEXT_PUBLIC_TEST_USER}" >> $GITHUB_ENV
-        echo "NEXT_PUBLIC_TEST_PASSWORD=${NEXT_PUBLIC_TEST_PASSWORD}" >> $GITHUB_ENV
-        echo "APP_URL=${APP_URL}" >> $GITHUB_ENV
+        echo "TEST_USER=${TEST_USER}" >> $GITHUB_ENV
+        echo "TEST_PASSWORD=${TEST_PASSWORD}" >> $GITHUB_ENV
+        echo "TEST_URL=${TEST_URL}" >> $GITHUB_ENV
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
