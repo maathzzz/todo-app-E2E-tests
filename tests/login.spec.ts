@@ -5,6 +5,8 @@ const TEST_USER = process.env.TEST_USER;
 const TEST_PASSWORD = process.env.TEST_PASSWORD;
 const TEST_URL = process.env.TEST_URL;
 
+// Login test
+
 test('Login', async ({ page }) => {
   await page.goto(`${TEST_URL}`);
   await page.getByPlaceholder('Email').click();
