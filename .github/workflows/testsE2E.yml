@@ -2,11 +2,6 @@ name: Run Playwright E2E Tests
 
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Use workflow from branch'
-        required: true
-        type: string
 
 jobs:
   e2e-tests:
@@ -15,16 +10,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.branch }}
+          ref: ${{ github.ref_name }}
 
       - name: Set TEST_URL variable
         run: |
-          if [[ "${{ github.event.inputs.branch }}" == "staging" ]]; then
+          if [[ "${{ github.ref_name }}" == "staging" ]]; then
             echo "TEST_URL=https://kingpanda.dev/" >> $GITHUB_ENV
-          elif [[ "${{ github.event.inputs.branch }}" == "master" ]]; then
+          elif [[ "${{ github.ref_name }}" == "master" ]]; then
             echo "TEST_URL=https://kingpanda.bet.br/" >> $GITHUB_ENV
           else
-            BRANCH_LOWER=$(echo "${{ github.event.inputs.branch }}" | tr '[:upper:]' '[:lower:]')
+            BRANCH_LOWER=$(echo "${{ github.ref_name }}" | tr '[:upper:]' '[:lower:]')
             echo "TEST_URL=https://$BRANCH_LOWER.kingpanda-front.pages.dev" >> $GITHUB_ENV
           fi
 
